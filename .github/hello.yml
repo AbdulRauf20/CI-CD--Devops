@@ -1,0 +1,19 @@
+# .github/workflows/my-pipeline.yml
+name: My First Pipeline# Display name on GitHub
+on:
+    push:
+        branches: [ main ] # TRIGGER — when to run
+# Run when code is pushed
+# Only on the main branch
+jobs:
+    build:
+        runs-on: ubuntu-latest# What to do
+# Job name (you choose this)
+# Use a fresh Ubuntu Linux server
+        steps:
+# Individual commands
+        - name: Checkout code
+# Give each step a name
+            uses: actions/checkout@v3 # Download your repo onto the runner
+        - name: Say Hello
+        run: echo 'Hello World!' # A normal shell command (Lab 01!) 
